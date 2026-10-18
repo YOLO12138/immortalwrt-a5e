@@ -1,0 +1,10 @@
+#!/bin/sh
+# Cubie A5E build: default LuCI language is Simplified Chinese.
+# Runs once at first boot (and after a factory reset).
+
+uci -q batch <<-EOF2
+	set luci.main.lang='zh_cn'
+	commit luci
+EOF2
+
+exit 0
